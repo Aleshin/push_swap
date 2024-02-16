@@ -58,4 +58,5 @@ int	swaps_pushes(t_stacks *stacks);
 int	three_n(t_stacks *stacks);
 int	four_n(t_stacks *stacks);
 int	five_n(t_stacks *stacks);
+int	pointer_a_2_min(t_stacks *stacks);
 #endif

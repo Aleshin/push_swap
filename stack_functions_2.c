@@ -36,11 +36,12 @@ int	four_n(t_stacks *stacks)
 {
 //	int	i;
 	push_a_2_b(stacks);
-	print(stacks);
+//	print(stacks);
 	three_n(stacks);
-	print(stacks);
+//	print(stacks);
 	push_b_2_a(stacks);
-	print(stacks);
+	pointer_a_2_min(stacks);
+//	print(stacks);
 /*
 	while (i < stacks.stack_a_counter)
 	{
@@ -77,6 +78,7 @@ int	special_cases(t_stacks *stacks, int args)
 		three_n(stacks);
 		return (1);
 	}
+/*
 	if (args == 4)
 	{
 		four_n(stacks);
@@ -87,7 +89,7 @@ int	special_cases(t_stacks *stacks, int args)
 		four_n(stacks);
 		return (1);
 	}
-
+*/
 	return (0);
 }
 
@@ -141,5 +143,22 @@ int	push_all(t_stacks *stacks)
 		stacks->stack_a[2][i] = 0;
 		i++;
 	}
+	return (0);
+}
+
+int	pointer_a_2_min(t_stacks *stacks)
+{
+	int	i;
+	int	m;
+
+	i = 0;
+	m = 0;
+	while (i < stacks->stack_a_counter)
+	{
+		if (stacks->stack_a[0][m] > stacks->stack_a[0][i])
+			m = i;
+		i++;
+	}
+	move_a_pointer(stacks, find_moves_a(stacks, m));
 	return (0);
 }
